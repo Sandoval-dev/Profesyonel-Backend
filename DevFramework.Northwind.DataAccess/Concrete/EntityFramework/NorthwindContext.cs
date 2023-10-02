@@ -16,6 +16,8 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
             Database.SetInitializer<NorthwindContext>(null);
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> categories { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

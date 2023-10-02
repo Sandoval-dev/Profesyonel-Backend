@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFrameworkTests\EntityFrameworkTest.cs" />
+    <Compile Include="NHibernateTests\NHibernateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,24 +1,30 @@
-﻿using DevFramework.Core.DataAccess.EntityFramework;
+﻿using DevFramework.Core.DataAccess.NHihabernate;
 using DevFramework.Northwind.DataAccess.Abstract;
+using DevFramework.Northwind.DataAccess.Concrete.EntityFramework;
 using DevFramework.Northwind.Entities.ComplexTypes;
 using DevFramework.Northwind.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
+namespace DevFramework.Northwind.DataAccess.Concrete.NHibernate
 {
-    public class EfProductDal : EfEntityRepositoryBase<Product, NorthwindContext>, IProductDal
+    public class NhProductDal : NhEntityRepositoryBase<Product>, IProductDal
     {
+        NHibernateHelper _helper;
+        public NhProductDal(NHibernateHelper nhibernateHelper) : base(nhibernateHelper)
+        {
+            _helper=nhibernateHelper;
+        }
+
         public List<ProductDetail> GetProductDetails()
         {
-            using (NorthwindContext context = new NorthwindContext())
+            using (var session=_helper.OpenSession())
             {
-                var result = from p in context.Products
-                             join c in context.categories on p.CategoryId equals c.CategoryId
+                var result = from p in session.Query<Product>()
+                             join c in session.Query<Category>() on p.CategoryId equals c.CategoryId
                              select new ProductDetail
                              {
                                  ProductId = p.ProductId,
