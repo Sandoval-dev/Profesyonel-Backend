@@ -1,6 +1,8 @@
 ﻿using DevFramework.Core.Aspects.Postsharp;
+using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.Aspects.Postsharp.LogAspects;
+using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
@@ -41,6 +43,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
 
         [CacheAspect(typeof(MemoryCacheManager))]
         [LogAspect(typeof(System.Data.Entity.Infrastructure.Interception.DatabaseLogger))]
+        [PerformanceCounterAspect(2)]
+        [SecuredOperation(Roles="Admin,Editor")]
         public List<Product> GetAll()
         {
             return _productDal.GetList();

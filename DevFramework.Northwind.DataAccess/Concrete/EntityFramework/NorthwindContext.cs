@@ -17,6 +17,9 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> categories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
