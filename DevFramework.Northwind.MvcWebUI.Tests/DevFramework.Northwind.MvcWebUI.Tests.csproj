@@ -64,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DevFramework.Northwind.Business\DevFramework.Northwind.Business.csproj">
+      <Project>{0f29cc4f-8ab5-432c-8546-bdc95af2da6a}</Project>
+      <Name>DevFramework.Northwind.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DevFramework.Northwind.MvcWebUI\DevFramework.Northwind.MvcWebUI.csproj">
       <Project>{242C5262-CB1E-478C-8FD4-6E5236D5108D}</Project>
       <Name>DevFramework.Northwind.MvcWebUI</Name>

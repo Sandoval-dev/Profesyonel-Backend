@@ -1,4 +1,5 @@
-﻿using DevFramework.Core.Aspects.Postsharp;
+﻿using AutoMapper;
+using DevFramework.Core.Aspects.Postsharp;
 using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.Aspects.Postsharp.LogAspects;
@@ -25,11 +26,13 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        private readonly IMapper _mapper;
 
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal,IMapper mapper)
         {
             _productDal = productDal;
+            _mapper = mapper;
 
         }
 
@@ -47,7 +50,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         [SecuredOperation(Roles="Admin,Editor")]
         public List<Product> GetAll()
         {
-            return _productDal.GetList();
+            var products = _mapper.Map<List<Product>>(_productDal.GetList());
+            return products;
         }
 
         public Product GetById(int id)

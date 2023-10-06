@@ -145,6 +145,7 @@
     <Compile Include="DataAccess\NHihabernate\NhQueryableRepository.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Common\WcfProxy.cs" />
     <Compile Include="Utilities\Mvc\Infrastructure\NinjectControllerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
