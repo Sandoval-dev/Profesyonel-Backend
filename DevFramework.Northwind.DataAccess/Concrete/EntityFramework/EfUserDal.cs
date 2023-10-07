@@ -12,12 +12,17 @@ namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework
 {
     public class EfUserDal:EfEntityRepositoryBase<User,NorthwindContext>,IUserDal
     {
-       public List<UserRole> GetUserRoles(User user)
+       public List<Entities.Concrete.UserRole> GetUserRoles(User user)
         {
             using (NorthwindContext context=new NorthwindContext())
             {
-                var result=context.Users
+                var result = context.Users;
             }
+        }
+
+        List<Entities.ComplexTypes.UserRole> IUserDal.GetUserRoles(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -44,6 +44,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DevFramework.Northwind.WcfS
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.MvcAngularUI", "DevFramework.Northwind.MvcAngularUI\DevFramework.Northwind.MvcAngularUI.csproj", "{DE10C6D1-8430-41BC-8AFF-567A7911B6B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,10 @@ Global
 		{EBEAB67F-52D7-4976-ACCA-49214D9C2D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBEAB67F-52D7-4976-ACCA-49214D9C2D2F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBEAB67F-52D7-4976-ACCA-49214D9C2D2F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DE10C6D1-8430-41BC-8AFF-567A7911B6B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE10C6D1-8430-41BC-8AFF-567A7911B6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE10C6D1-8430-41BC-8AFF-567A7911B6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE10C6D1-8430-41BC-8AFF-567A7911B6B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
